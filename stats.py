@@ -4,6 +4,8 @@ def count_words(book):
     for work in book:
         word_count += 1
     return word_count
+def sort_on(items):
+    return items["num"]
 
 def count_characters(book):
     book = book.lower()
@@ -17,3 +19,12 @@ def count_characters(book):
 
 
     return character_dic
+
+def dic_list(dic):
+    result = []
+
+    for k,v in dic.items():
+        result.append({"char": k, "num": v})
+
+    result.sort(reverse=True, key=sort_on)
+    return result
